@@ -29,6 +29,12 @@ module.exports = {
                 ]
 
             },
+            {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
         ],
     },
     plugins: [
@@ -52,7 +58,7 @@ function getHtmlPlugins(chunks) {
     return chunks.map(
         (chunk) =>
             new HTMLPlugin({
-                title: "React extension",
+                title: "ChatGPT Style Wrapper",
                 filename: `${chunk}.html`,
                 chunks: [chunk],
             })
