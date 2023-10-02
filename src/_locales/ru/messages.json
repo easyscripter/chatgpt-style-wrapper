@@ -1,0 +1,10 @@
+{
+    "name": {
+        "message": "ChatGPT Style Wrapper",
+        "descriptio": "Extension name"
+    },
+    "description": {
+        "message": "Расширение для  изменения цвета фона и логотипа для ChatGPT",
+        "description": "extenstion description"
+    }
+}

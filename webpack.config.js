@@ -4,7 +4,8 @@ const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     entry: {
-        index: "./src/index.tsx"
+        index: path.resolve("./src/index.tsx"),
+        content_script: path.resolve("./src/contentScript/index.ts") ,
     },
     mode: "production",
     module: {
@@ -35,12 +36,21 @@ module.exports = {
                     loader: 'url-loader',
                 },
             },
+            {
+                type: 'assets/resource',
+                test: /\.(png|jpg|jpeg|gif|woff|woff2|tff|eot|svg)$/,
+            },
         ],
     },
     plugins: [
         new CopyPlugin({
             patterns: [
                 { from: "manifest.json", to: "../manifest.json" },
+                { from:  path.resolve('src/_locales'), to: path.resolve('dist/_locales')},
+                {
+                    from: path.resolve('src/assets'),
+                    to: path.resolve('dist/')
+                }    
             ],
         }),
         ...getHtmlPlugins(["index"]),

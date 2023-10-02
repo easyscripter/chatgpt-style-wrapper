@@ -1,9 +1,26 @@
 {
     "version": "1.0.0",
     "manifest_version": 3,
-    "name": "ChatGPT Style Wrapper",
+    "name": "__MSG_name__",
+    "description": "__MSG_description__",
+    "default_locale": "en",
     "action": {
         "default_popup": "js/index.html",
         "default_title": "ChatGPT Style wrapper for change background colors and add logo"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://chat.openai.com/*"],
+            "run_at": "document_idle",
+            "all_frames": false,
+            "js": ["js/content_script.js"]
+        }
+    ],
+    "host_permissions": ["https://chat.openai.com/*"],
+    "web_accessible_resources": [
+        {
+            "resources": ["content_script.css", "images.png"],
+            "matches": ["https://chat.openai.com/*"]
+        }
+    ]
 }
