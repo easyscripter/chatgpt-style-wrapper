@@ -13,7 +13,7 @@ const App = () => {
   const [secondaryBackgroundColor, setSecondaryBackgroundColor] = useState<string>("#ff0000");
   const [textColor, setTextColor] = useState<string>("#000000");
   const [inputColor, setInputColor] = useState<string>("#00ff97");
-  const [headColor, setHeadColor] = useState<string>("#ffffff");
+  const [headColor, setHeadColor] = useState<string>("#76ff03");
 
   const handleChangeImagePosition = (name: string, value: number) => {
     setImagePosition(prevState => ({

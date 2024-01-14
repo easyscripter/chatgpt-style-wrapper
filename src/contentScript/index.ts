@@ -10,7 +10,7 @@ let styles: StylesType = {
     imageSrc: '',
     textColor: '#000dff',
     inputColor: '#00ff97',
-    headColor: '#ffffff',
+    headColor: '#76ff03',
 
 }
 
@@ -46,7 +46,6 @@ export function applyStyles(styles: StylesType) {
                     if (node.nodeType === 1) {
                         const elementNode = node as HTMLElement;
                         if (elementNode.classList.contains("text-token-text-primary")) {
-                            applyBackgroundColor(elementNode, "#E51A4B");
                             applyBackgroundColor(elementNode.firstElementChild as HTMLElement, 'white');
                             const avatar = elementNode.firstElementChild?.firstElementChild as HTMLElement | null;
                             if (avatar && avatar.classList.contains("items-end")) {
