@@ -6,16 +6,16 @@ settings:
 
 dependencies:
   '@emotion/react':
-    specifier: ^11.11.1
+    specifier: ^11.11.3
     version: 11.11.3(@types/react@18.2.47)(react@18.2.0)
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.47)(react@18.2.0)
   '@mui/material':
-    specifier: ^5.14.5
+    specifier: ^5.15.4
     version: 5.15.4(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)
   '@testing-library/jest-dom':
-    specifier: ^5.16.5
+    specifier: ^5.17.0
     version: 5.17.0
   '@testing-library/react':
     specifier: ^13.4.0
@@ -27,22 +27,22 @@ dependencies:
     specifier: ^27.5.2
     version: 27.5.2
   '@types/node':
-    specifier: ^16.18.11
+    specifier: ^16.18.70
     version: 16.18.70
   '@types/react':
-    specifier: ^18.0.27
+    specifier: ^18.2.47
     version: 18.2.47
   '@types/react-dom':
-    specifier: ^18.0.10
+    specifier: ^18.2.18
     version: 18.2.18
   copy-webpack-plugin:
     specifier: ^11.0.0
     version: 11.0.0(webpack@5.89.0)
   css-loader:
-    specifier: ^6.7.3
+    specifier: ^6.9.0
     version: 6.9.0(webpack@5.89.0)
   html-webpack-plugin:
-    specifier: ^5.5.0
+    specifier: ^5.6.0
     version: 5.6.0(webpack@5.89.0)
   react:
     specifier: ^18.2.0
@@ -53,11 +53,14 @@ dependencies:
   react-scripts:
     specifier: 5.0.1
     version: 5.0.1(@babel/plugin-syntax-flow@7.23.3)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.56.0)(react@18.2.0)(typescript@4.9.5)(webpack-cli@5.1.4)
+  style-loader:
+    specifier: ^3.3.4
+    version: 3.3.4(webpack@5.89.0)
   styles-loader:
     specifier: ^4.0.1
     version: 4.0.1(webpack@5.89.0)
   typescript:
-    specifier: ^4.9.4
+    specifier: ^4.9.5
     version: 4.9.5
   url-loader:
     specifier: ^4.1.1
@@ -71,13 +74,13 @@ devDependencies:
     specifier: ^0.0.246
     version: 0.0.246
   ts-loader:
-    specifier: ^9.4.2
+    specifier: ^9.5.1
     version: 9.5.1(typescript@4.9.5)(webpack@5.89.0)
   webpack:
-    specifier: ^5.75.0
+    specifier: ^5.89.0
     version: 5.89.0(webpack-cli@5.1.4)
   webpack-cli:
-    specifier: ^5.0.1
+    specifier: ^5.1.4
     version: 5.1.4(webpack@5.89.0)
 
 packages:
@@ -2730,6 +2733,7 @@ packages:
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    requiresBuild: true
     dev: false
 
   /@types/aria-query@5.0.4:
@@ -4357,6 +4361,7 @@ packages:
   /commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    requiresBuild: true
     dev: false
 
   /commander@8.3.0:
@@ -8531,6 +8536,7 @@ packages:
 
   /mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
+    requiresBuild: true
     dev: false
 
   /mdn-data@2.0.4:
@@ -8716,7 +8722,7 @@ packages:
     requiresBuild: true
     dependencies:
       iconv-lite: 0.6.3
-      sax: 1.2.4
+      sax: 1.3.0
     dev: false
     optional: true
 
@@ -10822,6 +10828,12 @@ packages:
   /sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
     dev: false
+
+  /sax@1.3.0:
+    resolution: {integrity: sha512-0s+oAmw9zLl1V1cS9BtZN7JAd0cW5e0QH4W3LWEK6a4LaLEA2OTpGYWDY+6XasBLtz6wkm3u1xRw95mRuJ59WA==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /saxes@5.0.1:
     resolution: {integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==}
