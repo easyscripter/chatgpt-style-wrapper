@@ -1,4 +1,4 @@
-import { StylesType } from "../types";
+import {StylesType} from "../types";
 
 let styles: StylesType = {
     imagePosition: {
@@ -14,7 +14,7 @@ let styles: StylesType = {
 
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message) => {
     styles = message;
     applyStyles(styles);
 });
@@ -24,9 +24,7 @@ export function applyStyles(styles: StylesType) {
     function applyBackgroundColor(element: HTMLElement, color = 'white') {
         element.style.backgroundColor = color;
     }
-    function applyTextColor(element: HTMLElement, color = '#250') {
-        element.style.color = color;
-    }
+
     function applyTextAreaBackgroundColor(textareas: NodeListOf<HTMLTextAreaElement>, color: string) {
         textareas.forEach(textarea => {
             let parentElement = textarea.parentElement;
@@ -41,7 +39,6 @@ export function applyStyles(styles: StylesType) {
 
 
     const textTokens = document.querySelectorAll('.w-full.text-token-text-primary');
-    const textMessages = document.querySelectorAll('.flex-col.gap-1');
     const textareas = document.querySelectorAll('textarea');
 
     const avatars = document.querySelectorAll(".items-end");
@@ -62,6 +59,7 @@ export function applyStyles(styles: StylesType) {
     logo.style.position = 'fixed';
 
     body!.appendChild(logo);
+
     function changeColorAutomatically() {
         const elements = document.querySelectorAll('[data-testid^="conversation-turn-"]');
         elements.forEach((element, index) => {
@@ -80,6 +78,7 @@ export function applyStyles(styles: StylesType) {
             }
         });
     }
+
     if (main) {
         applyBackgroundColor(main, styles.primaryBackgroundColor);
     }
@@ -103,5 +102,5 @@ export function applyStyles(styles: StylesType) {
     const observer = new MutationObserver(() => {
         changeColorAutomatically();
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, {childList: true, subtree: true});
 }
