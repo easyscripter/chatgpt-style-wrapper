@@ -39,31 +39,6 @@ export function applyStyles(styles: StylesType) {
         });
     }
 
-    function handleNewElements(mutationsList: MutationRecord[], _: MutationObserver) {
-        mutationsList.forEach((mutation) => {
-            if (mutation.type === "childList") {
-                mutation.addedNodes.forEach((node) => {
-                    if (node.nodeType === 1) {
-                        const elementNode = node as HTMLElement;
-                        if (elementNode.classList.contains("text-token-text-primary")) {
-                            applyBackgroundColor(elementNode.firstElementChild as HTMLElement, 'white');
-                            const avatar = elementNode.firstElementChild?.firstElementChild as HTMLElement | null;
-                            if (avatar && avatar.classList.contains("items-end")) {
-                                avatar.style.marginLeft = '10px';
-                            }
-                        }
-
-                    }
-                    if (node.nodeType === Node.ELEMENT_NODE) {
-                        const elementNode = node as Element;
-                        if (elementNode.tagName === 'HEADER') {
-                            elementNode.remove();
-                        }
-                    }
-                });
-            }
-        });
-    }
 
     const textTokens = document.querySelectorAll('.w-full.text-token-text-primary');
     const textMessages = document.querySelectorAll('.flex-col.gap-1');
@@ -124,9 +99,9 @@ export function applyStyles(styles: StylesType) {
         avatar.style.marginLeft = '10px';
     });
     applyTextAreaBackgroundColor(textareas as NodeListOf<HTMLTextAreaElement>, styles.inputColor);
-    changeColorAutomatically();
 
-
-    const observer = new MutationObserver(handleNewElements);
+    const observer = new MutationObserver(() => {
+        changeColorAutomatically();
+    });
     observer.observe(document.body, { childList: true, subtree: true });
 }
