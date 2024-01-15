@@ -11,7 +11,7 @@ const App = () => {
   });
   const [primaryBackgroundColor, setPrimaryBackgroundColor] = useState<string>("#00e3ca");
   const [secondaryBackgroundColor, setSecondaryBackgroundColor] = useState<string>("#ff0000");
-  const [textColor, setTextColor] = useState<string>("#000000");
+  const [textColor, setTextColor] = useState<string>("#6495ED");
   const [inputColor, setInputColor] = useState<string>("#00ff97");
   const [headColor, setHeadColor] = useState<string>("#76ff03");
 
