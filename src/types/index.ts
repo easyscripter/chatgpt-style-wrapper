@@ -8,4 +8,7 @@ export type StylesType = {
     imageSrc: string;
     primaryBackgroundColor: string;
     secondaryBackgroundColor: string;
+    textColor: string;
+    inputColor: string;
+    headColor: string;
 }
