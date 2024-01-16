@@ -50,15 +50,25 @@ export function applyStyles(styles: StylesType) {
 
     console.log('styles:', styles);
 
-    const logo = document.createElement('img');
-    logo.src = styles.imageSrc;
-    logo.style.width = 'auto';
-    logo.style.height = '50px';
-    logo.style.top = `${styles.imagePosition.top}px`;
-    logo.style.right = `${styles.imagePosition.right}px`;
-    logo.style.position = 'fixed';
+    const existedImg: HTMLImageElement | null = document.querySelector('body > img');
 
-    body!.appendChild(logo);
+
+    if (existedImg) {
+        existedImg.src = (styles.imageSrc == '') ? existedImg.src : styles.imageSrc;
+        existedImg.style.top = `${styles.imagePosition.top}px`;
+        existedImg.style.right = `${styles.imagePosition.right}px`;
+    } else {
+        // Если изображение не существует, создаем новое
+        const logo = document.createElement('img');
+        logo.src = styles.imageSrc;
+        logo.style.width = 'auto';
+        logo.style.height = '50px';
+        logo.style.top = `${styles.imagePosition.top}px`;
+        logo.style.right = `${styles.imagePosition.right}px`;
+        logo.style.position = 'fixed';
+        body!.appendChild(logo);
+    }
+
 
     function changeColorAutomatically() {
         const elements = document.querySelectorAll('[data-testid^="conversation-turn-"]');
